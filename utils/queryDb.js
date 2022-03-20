@@ -1,4 +1,6 @@
 const db = require('../db/connection.js');
+// const logTab = require('console.table');
+
 
 const queryDb = (sql, params) => {
 
@@ -7,12 +9,15 @@ const queryDb = (sql, params) => {
           console.log({ error: err.message });
           return;
         }
-        console.log({
-          message: 'success',
-          data: result
-        });
+        // console.log({
+        //   message: 'success',
+        //   data: result
+        // })
+        console.log('\033[2J');
+        console.table(result);
+
       });
-      db.end();
+    //   db.end();
 }
 
 module.exports = { queryDb };
