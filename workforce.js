@@ -26,6 +26,15 @@ let purpose = "start";
 //     })
 //     .then(() => console.log('POOP!!!'));
 
+function viewAllDepartments(){
+    getAllDepartments()
+       .then(([rows]) => {
+        let departments = rows;
+        console.log("\n");
+        console.table(departments);
+      })
+  }
+
 const run = async () => {
     let dbEdit = {};
 
@@ -35,7 +44,7 @@ const run = async () => {
         dbEdit = await askTheUser(purpose);
     }
     let table = await crud(purpose, dbEdit);
-    console.table(table.data);
+    console.table('**', table);
 
 }
 

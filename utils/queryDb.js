@@ -2,7 +2,9 @@ const db = require('../db/connection.js');
 
 const queryDb = (sql, params) => {
 
-    db.query(sql, params, (err, result) => {
+// console.log('ALMOST DONE!', sql, params);
+
+    db.promise().query(sql, params, (err, result) => {
         if (err) {
             console.log({ error: err.message });
             return;
@@ -12,6 +14,8 @@ const queryDb = (sql, params) => {
             data: result,
             password: ''
         });
+        console.log("KAKER", result.data)
+        return result.data;
     });
 }
 
