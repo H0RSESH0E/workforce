@@ -1,0 +1,26 @@
+{
+  "name": "WORKFORCE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "workforce.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node workforce.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H0RSESH0E/workforce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H0RSESH0E/workforce/issues"
+  },
+  "homepage": "https://github.com/H0RSESH0E/workforce#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.1",
+    "mysql2": "^2.3.3"
+  }
+}
