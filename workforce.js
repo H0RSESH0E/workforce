@@ -5,36 +5,38 @@ const crud = require('./utils/crud.js');
 
 let purpose = "start";
 
-askTheUser(purpose)
-    .then(userResponses => {
+// askTheUser(purpose)
+//     .then(userResponses => {
 
-        console.log(userResponses, "<-------------9");
-        purpose = userResponses.start_response;
-        return askTheUser(purpose);
+//         console.log(userResponses, "<-------------9");
+//         purpose = userResponses.start_response;
+//         return askTheUser(purpose);
 
-    })
-    .then(userResponses => {
+//     })
+//     .then(userResponses => {
 
-        console.log("this was to: ", purpose, "<---------------8");
-        crud(purpose, userResponses).then(table => { return table;});
-        
-    })
-    .then(data => {
+//         console.log("this was to: ", purpose, "<---------------8");
+//         crud(purpose, userResponses).then(table => { return table; });
 
-        let t = data.data;
-        console.table('_________>', t);
-    })    
-    .then(() => console.log('POOP!!!'));
+//     })
+//     .then(data => {
 
-const run = async() => {
+//         let t = data.data;
+//         console.table('_________>', t);
+//     })
+//     .then(() => console.log('POOP!!!'));
+
+const run = async () => {
     let dbEdit = {};
 
     let task = await askTheUser(purpose);
     purpose = task.start_response;
-}   if (purpose !== 'view all departments' || purpose !== 'view all roles' || purpose !== 'view all employees') {
-    dbEdit = await askTheUser(purpose);
-} 
+    if (purpose !== 'view all departments' || purpose !== 'view all roles' || purpose !== 'view all employees') {
+        dbEdit = await askTheUser(purpose);
+    }
     let table = await crud(purpose, dbEdit);
-    cons
+    console.table(table.data);
 
+}
 
+run();
