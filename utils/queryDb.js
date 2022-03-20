@@ -12,7 +12,7 @@ const queryDb = (sql, params) => {
           data: result
         });
       });
-
+      db.end();
 }
 
 module.exports = { queryDb };
