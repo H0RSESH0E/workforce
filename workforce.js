@@ -1,18 +1,30 @@
 const logTab = require('console.table');
-
+const inquirer = require('inquirer');
 const askTheUser = require('./utils/questions.js');
 const crud = require('./utils/crud.js');
 
-let purpose = "start";
 
-askTheUser(purpose)
-.then(userResponses => {
-    console.log(userResponses);
-    purpose = userResponses.start_response;
-    return askTheUser(purpose);
-})
-.then(userResponses => {
-    console.log("this was to: ",purpose);
-    console.log(userResponses);
-    crud(purpose, userResponses);
-});
+
+
+
+
+
+    inquirer.prompt([
+    
+        {
+            type: "input",
+            name: "username",
+            message: "What's your name?"
+          }
+          ])
+        .then((answers) => {
+            console.log(`Hello ${answers.username}!`)
+        })
+        .catch((error) => {
+          if (error.isTtyError) {
+            console.log("Your console environment is not supported!")
+          } else {
+            console.log(error)
+          }
+      }).then(() => console.log('please end'));
+
