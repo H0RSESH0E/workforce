@@ -1,5 +1,5 @@
 const logTab = require('console.table');
-
+const { closeDb } = require('./utils/queryDb.js');
 const askTheUser = require('./utils/questions.js');
 const crud = require('./utils/crud.js');
 
