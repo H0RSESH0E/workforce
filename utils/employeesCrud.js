@@ -4,20 +4,20 @@ const { queryDb } = require('./queryDb.js');
 const createEmployee = (userData) =>{
     const sql = `INSERT INTO employees (first_name, last_name, role_id, manager) VALUES (?,?,?,?)`;
     const params = Object.values(userData);
-    queryDb(sql, params);
+    return queryDb(sql, params);
 }
 
 // INSERT a record into the roles table
 const updateEmployee = (userData) =>{
     const sql = `UPDATE employees SET role_id = ? WHERE id = ?`;
     const params = Object.values(userData);
-    queryDb(sql, params);
+    return queryDb(sql, params);
 }
 
 // SELECT * FROM employees table
 const readEmployees = () =>{
     const sql = `SELECT * FROM employees`;
-    queryDb(sql);
+    return queryDb(sql);
 }
 
 
