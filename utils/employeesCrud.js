@@ -16,10 +16,11 @@ const updateEmployee = (userData) =>{
 
 // SELECT * FROM employees table
 const readEmployees = () =>{
-    const sql = `SELECT * FROM employees`;
+    const sql =
+    //  `SELECT * FROM employees`;
     `SELECT * FROM employees empT
     LEFT JOIN employees manT
-    ON empT.manager_id = manT.id`
+    ON empT.manager_id = manT.id`;
     return Promise.resolve(queryDb(sql));
 }
 

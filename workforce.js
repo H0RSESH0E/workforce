@@ -1,6 +1,7 @@
 
 const askTheUser = require('./utils/questions.js');
 const crud = require('./utils/crud.js');
+const table = require('console.table');
 
 // let purpose = "start";
 
