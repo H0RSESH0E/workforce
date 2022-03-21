@@ -29,7 +29,7 @@ VALUES
 INSERT INTO employees
 (first_name, last_name, role_id, manager_id)
 VALUES
-('Jon', 'Columbo', 12, 'Guy Lombardo'),
-('Gus', 'Bricker', 9, 'Pepito Gonsales'),
-('Surinam', 'Patel', 1, 'Jazz'),
-('Groot', '', 6, 'The Emperor');
+('Jon', 'Columbo', 12, null),
+('Gus', 'Bricker', 9, '1'),
+('Surinam', 'Patel', 1, '2'),
+('Groot', '', 6, '2');

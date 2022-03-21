@@ -4,30 +4,41 @@ const { createRole, readRoles } = require('./rolesCrud.js');
 const { createEmployee, updateEmployee, readEmployees } = require('./employeesCrud.js');
 
 
-const crud = (request, userData) => {
+const crud = async (request, userData) => {
 
     switch (request) {
         case 'view all departments':
-            readDept();
-            break;
+            console.log('DEPARTMENTS');
+            console.log('');
+            return Promise.resolve(readDept());
         case 'view all roles':
-            readRoles();
-            break;
+            console.log('ROLES');
+            console.log('');
+            return Promise.resolve(readRoles());
         case 'view all employees':
-            readEmployees();
-            break;
+            console.log('EMPLOYEES');
+            console.log('');
+            return Promise.resolve(readEmployees());
         case 'add a department':
-            createDept(userData)
-            break;
+            console.log('');
+            console.log('ADDING: a department');
+            console.log('');
+            return Promise.resolve(createDept(userData));
         case 'add a role':
-            createRole(userData);
-            break;
+            console.log('');
+            console.log('ADDING: a role');
+            console.log('');
+            return Promise.resolve(createRole(userData));
         case 'add an employee':
-            createEmployee(userData);
-            break;
+            console.log('');
+            console.log('ADDING: an employee');
+            console.log('');
+            return Promise.resolve(createEmployee(userData));
         case 'update an employee role':
-            updateEmployee(userData);
-            break;
+            console.log('');
+            console.log('UPDATING: an employee');
+            console.log('');
+            return Promise.resolve(updateEmployee(userData));
     }
 }
 

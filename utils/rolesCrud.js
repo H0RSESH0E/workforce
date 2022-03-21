@@ -4,13 +4,17 @@ const { queryDb } = require('./queryDb.js');
 const createRole = (userData) =>{
     const sql = `INSERT INTO roles (title, salary, dept_id) VALUES (?,?,?)`;
     const params = Object.values(userData);
-    queryDb(sql, params);
+    return Promise.resolve(queryDb(sql, params));
 }
 
 // SELECT * FROM roles table
 const readRoles = () =>{
-    const sql = `SELECT * FROM roles`;
-    queryDb(sql);
+    const sql = `
+    SELECT roles.title, roles.id, departments.dept_name, roles.salary 
+    FROM roles 
+    LEFT JOIN departments 
+    ON roles.dept_id = departments.id`;
+    return Promise.resolve(queryDb(sql));
 }
 
 

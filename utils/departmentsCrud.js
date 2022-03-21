@@ -4,13 +4,15 @@ const { queryDb } = require('./queryDb.js');
 const createDept = (userData) =>{
     const sql = `INSERT INTO departments (dept_name) VALUES (?)`;
     const params = [userData.dept_name];
-    queryDb(sql, params);
+    return Promise.resolve(queryDb(sql, params));
 }
 
 // SELECT * FROM departments table
-const readDept = () =>{
-    const sql = `SELECT * FROM departments`;
-    queryDb(sql);
+const readDept =  () => {
+    const sql = `
+    SELECT departments.dept_name, departments.id
+    FROM departments`;
+    return Promise.resolve(queryDb(sql));
 }
 
 module.exports = { createDept, readDept }

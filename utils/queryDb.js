@@ -4,6 +4,7 @@ const db = require('../db/connection.js');
 
 const queryDb = (sql, params) => {
 
+<<<<<<< HEAD
     db.query(sql, params, (err, result) => {
         if (err) {
           console.log({ error: err.message });
@@ -18,6 +19,14 @@ const queryDb = (sql, params) => {
 
       });
     //   db.end();
+=======
+    // console.log('DB -9 QUERY');
+
+    return db.promise().query(sql, params)
+        .then(([rows]) => {
+            return rows;
+        });
+>>>>>>> FINAL
 }
 
 module.exports = { queryDb };
