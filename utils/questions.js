@@ -7,7 +7,7 @@ const askTheUser = (purpose) => {
             type: 'list',
             message: "What would you like to do?",
             name: 'start_response',
-            choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role'],
+            choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role', 'end'],
             when: (purpose === "start")
 
         },
